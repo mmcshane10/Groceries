@@ -3,11 +3,13 @@ $(document).ready(function() {
     event.preventDefault();
 
     var list = ["item1", "item2", "item3", "item4", "item5", "item6"];
-    var listSort = list.sort();
-    var Output = listSort.charAt(0).toUpperCase();
+    var groceries = list.map(function(input) {
+      return $("input#" + input).val().toUpperCase();
+    });
+    var sortedGroceries = groceries.sort();
+debugger;
 
-
-    list.forEach(function(item) {
+    Output.forEach(function(item) {
       var userInput = $("input#" + item)
       $("." + item).text(userInput)
 
